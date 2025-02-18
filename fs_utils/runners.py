@@ -52,7 +52,13 @@ def gather_device_info(devs):
 
 def gather_block_info(devs):
     ret = subprocess.run(
-        ["lsblk", "-J", "-o", "NAME,PHY-SeC,LOG-Sec,SIZE", *devs],
+        [
+            "lsblk",
+            "-J",
+            "-o",
+            "NAME,PHY-SeC,LOG-Sec,SIZE,label,model,vendor,fstype,PARTTYPE",
+            *devs,
+        ],
         capture_output=True,
         text=True,
     )
