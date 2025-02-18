@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "myusb"
+version = "0.1.0"
+description = ""
+authors = ["Samuli Nikkilä <sanikk@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+pyudev = "^0.24.3"
+pyparted = "^3.13.0"
+invoke = "^2.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
