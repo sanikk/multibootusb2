@@ -1,7 +1,5 @@
 from udev.udev import get_all_block_devices
-from fs_utils.runners import gather_device_info
-
-# , gather_block_info
+from fs_utils.runners import gather_device_info, gather_block_info
 
 # from usb_utils.usb_utils import find_mass_storage
 
@@ -11,7 +9,7 @@ for addr, fs_type in devs:
 g = gather_device_info([dev[0] for dev in devs])
 print(f"{g=}")
 print("*" * 12)
-# b = gather_block_info([dev[0] for dev in devs])
-# print(f"{b=}")
+b = gather_block_info([dev[0] for dev in devs])
+print(f"{b=}")
 # m = find_mass_storage()
 # print(f"{m=}")

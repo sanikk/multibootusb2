@@ -50,5 +50,22 @@ def gather_device_info(devs):
         return None
 
 
+def gather_block_info(devs):
+    ret = subprocess.run(
+        ["lsblk", "-J", "-o", "NAME,PHY-SeC,LOG-Sec,SIZE", *devs],
+        capture_output=True,
+        text=True,
+    )
+    if ret and ret.returncode == 0:
+        print(ret.stdout)
+        block_infos = json.loads(ret.stdout)
+        return block_infos
+    if not ret:
+        print("Error: no return value from gathering block info")
+    else:
+        print("Error:", ret.stderr)
+    return None
+
+
 if __name__ == "__main__":
     pass
