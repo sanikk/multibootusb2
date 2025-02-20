@@ -6,10 +6,10 @@ from fs_utils.runners import gather_device_info, gather_block_info
 devs = get_all_block_devices()
 for addr, fs_type in devs:
     print(f"{addr} {fs_type}")
-g = gather_device_info([dev[0] for dev in devs])
+g = gather_device_info(devs)
 print(f"{g=}")
 print("*" * 12)
-b = gather_block_info([dev[0] for dev in devs])
+b = gather_block_info(devs)
 print(f"{b=}")
 # m = find_mass_storage()
 # print(f"{m=}")

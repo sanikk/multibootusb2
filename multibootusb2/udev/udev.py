@@ -1,10 +1,10 @@
 import pyudev
 
 
-def get_all_block_devices():
+def get_all_block_devices() -> list[str] | None:
     context = pyudev.Context()
     usb_devices = [
-        (device.device_node, device.get("ID_FS_TYPE"))
+        device.device_node
         for device in context.list_devices(subsystem="block", DEVTYPE="disk")
         if device.get("ID_BUS") == "usb"
     ]
