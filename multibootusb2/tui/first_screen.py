@@ -1,12 +1,12 @@
+from tui.common_elements import enter_prompt
 import curses
 
 
 def first_screen(stdscr, height, width):
     title = "MultiBootUSB"
-    prompt = "Press Enter to continue"
 
     stdscr.addstr(height // 2 - 1, (width - len(title)) // 2, title, curses.A_BOLD)
-    stdscr.addstr(height // 2 + 1, (width - len(prompt)) // 2, prompt)
+    stdscr.addstr(height // 2 + 1, (width - len(enter_prompt)) // 2, enter_prompt)
     stdscr.refresh()
 
     while True:

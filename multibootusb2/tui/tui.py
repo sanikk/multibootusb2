@@ -10,8 +10,4 @@ def start_tui(stdscr):
 
     first_screen(stdscr, height, width)
     # Second screen: selection menu
-    selected = second_screen(stdscr, height, width)
-    stdscr.clear()
-    stdscr.addstr(height // 2, (width - 20) // 2, f"You selected: {selected}")
-    stdscr.refresh()
-    stdscr.getch()  # Wait for final key press
+    second_screen(stdscr, height, width)
