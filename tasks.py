@@ -14,3 +14,8 @@ def dev(c):
 @task
 def tui(c):
     c.run("python multibootusb2/start_tui.py", pty=True)
+
+
+@task
+def gui(c):
+    c.run("python multibootusb2/start_gui.py")

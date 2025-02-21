@@ -6,10 +6,11 @@ authors = ["Samuli Nikkilä <sanikk@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.13"
+python = ">=3.13,<3.14"
 pyudev = "^0.24.3"
 pyparted = "^3.13.0"
 invoke = "^2.2.0"
+pyside6 = "^6.8.2.1"
 
 
 [build-system]
